@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disci-App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+
+  <header>
+    <div class="header-inner">
+      <div class="brand">
+        <span class="brand-icon">▲</span>
+        <span class="brand-name">DISCI<em>APP</em></span>
+      </div>
+      <div class="xp-block">
+        <div class="xp-top-row">
+          <span id="rank-badge" class="rank-badge">⬡ Novice</span>
+          <span id="xp-counter" class="xp-counter">0 XP</span>
+        </div>
+        <div class="xp-track">
+          <div id="xp-fill" class="xp-fill"></div>
+        </div>
+        <p id="rank-hint" class="rank-hint">Completa misiones para subir de rango</p>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <aside class="form-panel">
+      <h2 class="section-title">Nueva Misión</h2>
+
+      <div class="field-group">
+        <label for="inp-name">Nombre</label>
+        <input type="text" id="inp-name" placeholder="Ej. Leer 20 minutos" />
+      </div>
+
+      <div class="field-group">
+        <label for="inp-desc">Descripción</label>
+        <textarea id="inp-desc" placeholder="¿En qué consiste?"></textarea>
+      </div>
+
+      <div class="field-group">
+        <label for="inp-diff">Dificultad</label>
+        <select id="inp-diff">
+          <option value="easy">Fácil — 10 XP</option>
+          <option value="normal" selected>Normal — 25 XP</option>
+          <option value="hard">Difícil — 50 XP</option>
+        </select>
+      </div>
+
+      <button class="btn-create" onclick="createMission()">+ Crear Misión</button>
+    </aside>
+
+    <section class="list-panel">
+      <h2 class="section-title">
+        Misiones&nbsp;<span id="mission-count" class="count-pill">0</span>
+      </h2>
+      <ul id="mission-list"></ul>
+      <p id="empty-state" class="empty-state">Todavía no hay misiones. ¡Crea la primera!</p>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
